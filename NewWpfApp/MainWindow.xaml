@@ -1,0 +1,53 @@
+﻿<Window x:Class="NewWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:conv="clr-namespace:NewWpfApp.Convertes"
+        mc:Ignorable="d"
+        Title="Twój E-Anal" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="C:\Users\dobie\source\repos\NewWpfApp\NewWpfApp\Resources\images.jfif" Grid.Column="0" Grid.Row="0" ToolTip="Przejdź na stronę anala">
+            <Image.InputBindings>
+                <MouseBinding MouseAction="LeftClick" Command="{Binding OpenWebsiteCommand}"/>
+            </Image.InputBindings>
+        </Image>
+        <Button Content="Dodaj wizytę" Command="{Binding OpenCommand}" Grid.Column="0" Grid.Row="1"/>
+        <Button Content="Opcje" Command="{Binding OptionsCommand}" Grid.Column="0" Grid.Row="2"/>
+        <Button Content="Zamknij" Command="{Binding CloseCommand}" Grid.Column="0" Grid.Row="3"/>
+        <TabControl Grid.Column="1" Grid.RowSpan="5">
+            <TabItem Header="Poprzednie wizyty">
+                <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" CanUserReorderColumns="True" IsReadOnly="True">
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Pokaż wizytę"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Lekarz" Binding="{Binding Doctor}" ToolTipService.ToolTip="{Binding Doctor}"/>
+                        <DataGridTextColumn Header="Data" Binding="{Binding Date}"/>
+                        <DataGridTextColumn Header="Specjalista" Binding="{Binding Path=Doctor.Specialization, Converter={conv:SpecializationToStringConverter}}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Twoje dane">
+
+            </TabItem>
+            <TabItem Header="Kontakt">
+
+            </TabItem>
+        </TabControl>
+        
+    </Grid>
+</Window>

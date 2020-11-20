@@ -21,7 +21,7 @@ namespace NewWpfApp
             {
                 return new CommandHandler(
                     () => { OpenWebsiteExecute(); },
-                    () => { return true; });
+                    () => { return false; });
             }
         }
 

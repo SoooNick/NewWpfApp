@@ -72,6 +72,7 @@
     <Compile Include="CommandHandler.cs" />
     <Compile Include="Convertes\SpecializationToStringConverter.cs" />
     <Compile Include="DefaultData\DefaultData.cs" />
+    <Compile Include="Enums\Sex.cs" />
     <Compile Include="Enums\Specialization.cs" />
     <Compile Include="Helpers\EnumHelpers.cs" />
     <Compile Include="Enums\DoctorDegree.cs" />

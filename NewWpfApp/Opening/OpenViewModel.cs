@@ -17,7 +17,6 @@ namespace NewWpfApp.Opening
             }
         }
 
-
         public ICommand ZapiszCommand
         {
             get
@@ -26,7 +25,7 @@ namespace NewWpfApp.Opening
             }
         }
 
-
+        #region Properties
         private string _text;
         public string Text
         {
@@ -40,6 +39,8 @@ namespace NewWpfApp.Opening
                 OnPropertyChanged();
             }
         }
+
+        #endregion
 
         public void SaveFile()
         {

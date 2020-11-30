@@ -6,7 +6,9 @@ namespace NewWpfApp.Model
 {
     public class Doctor : Person
     {
-        public Doctor(string firstName, string secondName, DoctorDegree doctorDegree, Specialization specialization) : base(firstName, secondName)
+
+        public Doctor(string firstName, string secondName, DoctorDegree doctorDegree, Specialization specialization, Sex sex)
+            : base(firstName, secondName, sex)
         {
             DoctorDegree = doctorDegree;
             Specialization = specialization;

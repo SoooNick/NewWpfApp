@@ -20,10 +20,10 @@
 
         <Image Source="C:\Users\dobie\source\repos\NewWpfApp\NewWpfApp\Resources\images.jfif" Grid.Column="0" Grid.Row="0" ToolTip="Przejdź na stronę anala">
             <Image.InputBindings>
-                <MouseBinding MouseAction="LeftClick" Command="{Binding OpenWebsiteCommand}"/>
+                <MouseBinding MouseAction="LeftClick"  Command="{Binding OpenWebsiteCommand}"/>
             </Image.InputBindings>
         </Image>
-        <Button Content="Dodaj wizytę" Command="{Binding OpenCommand}" Grid.Column="0" Grid.Row="1"/>
+        <Button Content="Dodaj wizytę" Command="{Binding AddAppointmentCommand}" Grid.Column="0" Grid.Row="1"/>
         <Button Content="Opcje" Command="{Binding OptionsCommand}" Grid.Column="0" Grid.Row="2"/>
         <Button Content="Zamknij" Command="{Binding CloseCommand}" Grid.Column="0" Grid.Row="3"/>
         <TabControl Grid.Column="1" Grid.RowSpan="5">
@@ -48,6 +48,6 @@
 
             </TabItem>
         </TabControl>
-        
+
     </Grid>
 </Window>

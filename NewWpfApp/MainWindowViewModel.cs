@@ -13,7 +13,7 @@ namespace NewWpfApp
         {
         }
 
-        #region 
+        #region Open website Command
 
         public ICommand OpenWebsiteCommand
         {
@@ -38,8 +38,7 @@ namespace NewWpfApp
             get
             {
                 return new CommandHandler(
-                    () => { CloseExecute(); },
-                    () => { return CanExecuteClose; });
+                    () => { CloseExecute(); });
             }
         }
 
@@ -48,21 +47,13 @@ namespace NewWpfApp
             var result = MessageBox.Show("Czy na pewno zamknąć program?", "Pytanie", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
-                base.CloseWindow();
-            }
-        }
-
-        public bool CanExecuteClose
-        {
-            get
-            {
-                return true;
+                CloseWindow();
             }
         }
         #endregion
 
-        #region CloseCommand
-        public ICommand OpenCommand
+        #region Dodaj wizyte
+        public ICommand AddAppointmentCommand
         {
             get
             {

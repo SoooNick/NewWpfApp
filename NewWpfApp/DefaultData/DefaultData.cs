@@ -37,5 +37,24 @@ namespace NewWpfApp.DefaultData
                 return _appointments;
             }
         }
+
+
+        public static void AddDoctor(Doctor doctor)
+        {
+            if(_doctors == null)
+            {
+                _doctors = new List<Doctor>();
+            }
+            _doctors.Add(doctor);
+        }
+
+        public static void AddAppointment(Appointment appointment)
+        {
+            if(_appointments == null)
+            {
+                _appointments = new List<Appointment>();
+            }
+            _appointments.Add(appointment);
+        }
     }
 }

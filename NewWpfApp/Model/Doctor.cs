@@ -1,6 +1,7 @@
 ﻿using NewWpfApp.Attribiutes;
 using NewWpfApp.Enums;
 using NewWpfApp.Helpers;
+using System;
 
 namespace NewWpfApp.Model
 {
@@ -14,6 +15,7 @@ namespace NewWpfApp.Model
             Specialization = specialization;
         }
 
+        public Guid DoctorId { get; set; }
         public DoctorDegree DoctorDegree { get; set; }
         public Specialization Specialization { get; set; }
 
